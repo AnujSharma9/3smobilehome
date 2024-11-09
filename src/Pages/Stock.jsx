@@ -1,8 +1,12 @@
 import React from "react"
+import { Navbar } from "../Components/Navbar"
 export function Stock(){
     return(
         <>
-            <h1>Stock</h1>
+            <Navbar/>
+            <div className="container">
+             <h1>Stock</h1>
+             </div>
         </>
     )
 }

@@ -20,6 +20,10 @@ export function Signin(){
             } else {
                 const result = await signInUser(email, password);
                 if (result.status === 'Success') {
+                    // Cache the token
+                    const token = result['data']['token'];
+                    sessionStorage.setItem('token', token);
+
                     toast.success('Welcome to the stock');
                     navigate('/stock');
                 } else {
@@ -27,11 +31,9 @@ export function Signin(){
                 }
             }
         } catch (error) {
-            toast.error('Failed to connect to the backend');
+            toast.error(`Failed to connect to the backend: ${error.message || ''}`);
         }
-    };
-    
-
+    }
     return(
         <>
         <h1 className="title">Signin</h1>

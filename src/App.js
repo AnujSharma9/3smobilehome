@@ -7,6 +7,8 @@ import Account from './Pages/Account';
 import Stock from './Pages/Stock';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Cart from './Pages/Cart';
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
         <Route path='/signup' element = {<Signup/>} />
         <Route path='/account' element = {<Account/>}/>
         <Route path='/stock' element = {<Stock/>}/>
+        <Route path = '/cart' element = {<Cart/>}/>
       </Routes>
       <ToastContainer />
     </div>
